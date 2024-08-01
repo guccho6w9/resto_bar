@@ -1,5 +1,5 @@
 // components/Header.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
   const images = [
@@ -10,16 +10,19 @@ const Header: React.FC = () => {
 
   const [currentImage, setCurrentImage] = useState(0);
 
-  const nextImage = () => {
-    setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 4000); // Cambia de imagen cada 3 segundos
+
+    return () => clearInterval(interval); // Limpiar el intervalo al desmontar el componente
+  }, [images.length]);
 
   return (
-    <header className="relative h-64 mx-md">
-      <div 
-        className="bg-cover bg-center h-full mx-md" 
+    <header className="relative h-64 overflow-hidden mx-md">
+      <div
+        className="bg-cover bg-center h-full transition-all duration-1000 ease-in-out"
         style={{ backgroundImage: `url(${images[currentImage]})` }}
-        onClick={nextImage}
       />
       <div className="absolute top-4 right-4 bg-red-500 text-white rounded-full px-3 py-1 text-sm font-bold">
         Hacemos envíos
@@ -29,4 +32,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-
