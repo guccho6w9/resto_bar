@@ -1,31 +1,109 @@
-
 {
-    
-    "HAMBURGUESAS": [
-      { "name": "Hamburguesa comun", "price": 2.999 },
-      { "name": "Hamburguesa doble con Queso", "price": 3.500 }
-    ],
-    
-    "SANDWICHES": [
-      { "name": "Sandwich de Milanesa simple", "price": 4.000 },
-      { "name": "Sandwich de Milanesa especial", "price": 5.009 },
-      { "name": "Lomito simple", "price": 4.000 },
-      { "name": "Lomito especial", "price": 5.000 }
-    ],
-    "PIZZAS": [
-      { "name": "Pizza Comun", "price": 2.999 },
-      { "name": "Pizza Fugazzeta", "price": 3.999 },
-      { "name": "Pizza Especial", "price": 3.999 }
-    ],
-    
-    "BEBIDAS": [
-      { "name": "Coca Cola", "price": 1.999 },
-      { "name": "Fanta", "price": 1.999 },
-      { "name": "Jugo de Naranja", "price": 1050 }
-    ],
-    "POSTRES": [
-      { "name": "Lemon Pie", "price": 3.999 },
-      { "name": "Cheesecake", "price": 3.999 }
-    ]
-  }
+  "HAMBURGUESAS": [
+    { 
+      "name": "Hamburguesa común", 
+      "price": 2999, 
+      "description": "Hamburguesa de 150g, queso, huevo, mayonesa, lechuga, tomate"
+    },
+    { 
+      "name": "Hamburguesa doble con Queso", 
+      "price": 3500, 
+      "description": "Doble hamburguesa de 150g, doble queso, huevo, mayonesa, lechuga, tomate" 
+    }
+  ],
   
+  "SANDWICHES": [
+    { 
+      "name": "Sandwich de Milanesa simple", 
+      "price": 4000, 
+      "description": "Milanesa de ternera, lechuga, tomate, mayonesa"
+    },
+    { 
+      "name": "Sandwich de Milanesa especial", 
+      "price": 5000, 
+      "description": "Milanesa de ternera, queso, jamón, lechuga, tomate, huevo, mayonesa, bacon"
+    },
+    { 
+      "name": "Lomito simple", 
+      "price": 4000, 
+      "description": "Lomo de ternera, lechuga, tomate, mayonesa"
+    },
+    { 
+      "name": "Lomito especial", 
+      "price": 5000, 
+      "description": "Lomo de ternera, queso, jamón, lechuga, tomate, huevo, mayonesa, bacon"
+    }
+  ],
+  
+  "PIZZAS": [
+    { 
+      "name": "Pizza Común", 
+      "price": 2999, 
+      "description": "Queso mozzarella, jamon" 
+    },
+    { 
+      "name": "Pizza Fugazzeta", 
+      "price": 3999, 
+      "description": "Queso mozzarella, cebolla caramelizada" 
+    },
+    { 
+      "name": "Pizza Especial", 
+      "price": 3999, 
+      "description": "Queso mozzarella, huevo, jamón, morrones, aceitunas" 
+    }
+  ],
+  
+  "ROTISERIA": [
+    { 
+      "name": "Tortilla de papa", 
+      "price": 3599, 
+      "description": "Papas, huevo, cebolla, morron, jamon" 
+    },
+    { 
+      "name": "Tarta de pollo", 
+      "price": 3999, 
+      "description": "Pollo, queso, cebolla, morron"
+    },
+    { 
+      "name": "Tarta vegetariana", 
+      "price": 3999, 
+      "description": "Espinaca, choclo, roquefort, ricota, cebolla, champiñones"
+    }
+  ],
+  
+  "BEBIDAS": [
+    { 
+      "name": "Coca Cola", 
+      "price": 1999, 
+      "description": "Gaseosa de cola, 1000ml" 
+    },
+    { 
+      "name": "Fanta", 
+      "price": 1999, 
+      "description": "Gaseosa de naranja, 1000ml" 
+    },
+    { 
+      "name": "Botella de agua", 
+      "price": 1499, 
+      "description": "Agua mineral, 500ml" 
+    },
+    { 
+      "name": "Jugo de Naranja", 
+      "price": 1050, 
+      "description": "Jugo natural de naranja, 400ml" 
+    }
+  ],
+  
+  "POSTRES": [
+    { 
+      "name": "Lemon Pie", 
+      "price": 3999, 
+      "description": "Base de masa dulce, crema de limón, merengue"
+    },
+    { 
+      "name": "Cheesecake", 
+      "price": 3999, 
+      "description": "Base de galleta, crema de queso, cobertura de frutos rojos"
+    }
+  ]
+}

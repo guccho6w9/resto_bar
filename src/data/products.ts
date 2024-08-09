@@ -1,6 +1,7 @@
 // data/products.ts
 export interface Product {
     name: string;
+    description: string;
     price: number;
   }
   
