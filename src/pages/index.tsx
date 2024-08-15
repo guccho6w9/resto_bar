@@ -3,7 +3,6 @@ import '@/app/globals.css';
 import Header from '@/components/header';
 import InfoLocal from '@/components/infolocal';
 import CartButton from '@/components/cartButton';
-import Footer from '@/components/footer';
 import ProductList from '@/components/productList';
 import products from '@/data/products';
 import { CartProvider } from '@/context/cartContext';
