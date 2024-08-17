@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import OrderForm from '@/components/orderForm'; // Asegúrate de tener el componente OrderForm creado
+import { CartProvider } from '@/context/cartContext';
 
 interface Product {
   name: string;

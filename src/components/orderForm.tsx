@@ -1,4 +1,6 @@
+// components/OrderForm.tsx
 import React, { useState } from 'react';
+import { useCart } from '@/context/cartContext';
 
 interface OrderFormProps {
   product: { name: string; price: number; description: string };
@@ -8,9 +10,17 @@ interface OrderFormProps {
 const OrderForm: React.FC<OrderFormProps> = ({ product, onClose }) => {
   const [quantity, setQuantity] = useState(0);
   const [notes, setNotes] = useState("");
+  const { addToCart } = useCart();
 
   const handleQuantityChange = (change: number) => {
     setQuantity((prevQuantity) => Math.max(0, prevQuantity + change));
+  };
+
+  const handleAddToCart = () => {
+    if (quantity > 0) {
+      addToCart({ product, quantity, notes });
+      onClose();
+    }
   };
 
   const total = product.price * quantity;
@@ -21,14 +31,14 @@ const OrderForm: React.FC<OrderFormProps> = ({ product, onClose }) => {
         <h2 className="text-3xl font-bold mb-6 text-center">{product.name}</h2>
         <p className="text-gray-700 mb-6 text-center">{product.description}</p>
         <div className="flex items-center justify-center mb-6">
-          <button 
+          <button
             className="bg-yellow-500 hover:bg-yellow-600 text-white text-xl p-3 rounded-full transition-colors duration-300"
             onClick={() => handleQuantityChange(-1)}
           >
             -
           </button>
           <span className="mx-6 text-2xl">{quantity}</span>
-          <button 
+          <button
             className="bg-yellow-500 hover:bg-yellow-600 text-white text-xl p-3 rounded-full transition-colors duration-300"
             onClick={() => handleQuantityChange(1)}
           >
@@ -45,14 +55,16 @@ const OrderForm: React.FC<OrderFormProps> = ({ product, onClose }) => {
           Total: ${total.toFixed(2)}
         </div>
         <div className="flex justify-between">
-          <button 
-            onClick={onClose} 
-            className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg transition-colors duration-300"
+          <button
+            onClick={onClose}
+            className="bg-gray-500 text-white px-6 py-3 rounded-lg"
           >
             Cancelar
           </button>
-          <button 
-            className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition-colors duration-300"
+          <button
+            onClick={handleAddToCart}
+            disabled={quantity === 0}
+            className={`px-6 py-3 rounded-lg ${quantity > 0 ? 'bg-yellow-500 hover:bg-yellow-600' : 'bg-gray-300'} text-white`}
           >
             Confirmar Pedido
           </button>
