@@ -3,15 +3,21 @@ import '@/app/globals.css';
 import Header from '@/components/header';
 import InfoLocal from '@/components/infolocal';
 import CartButton from '@/components/cartButton';
+import CartDrawer from '@/components/cartDrawer';
 import ProductList from '@/components/productList';
 import products from '@/data/products';
 import { CartProvider } from '@/context/cartContext';
 
 const Home: React.FC = () => {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleCategoryClick = (category: string) => {
     setOpenCategory((prevCategory) => (prevCategory === category ? null : category));
+  };
+
+  const toggleCartDrawer = () => {
+    setIsCartOpen(!isCartOpen);
   };
 
   return (
@@ -36,8 +42,9 @@ const Home: React.FC = () => {
             ))}
           </main>
         </div>
+        <CartButton onClick={toggleCartDrawer} />
+        {isCartOpen && <CartDrawer onClose={toggleCartDrawer} />}
       </div>
-      <CartButton  />
     </CartProvider>
   );
 };
