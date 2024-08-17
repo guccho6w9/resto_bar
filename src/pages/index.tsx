@@ -5,6 +5,7 @@ import InfoLocal from '@/components/infolocal';
 import CartButton from '@/components/cartButton';
 import CartDrawer from '@/components/cartDrawer';
 import ProductList from '@/components/productList';
+import Footer from '@/components/footer';
 import products from '@/data/products';
 import { CartProvider } from '@/context/cartContext';
 
@@ -45,8 +46,11 @@ const Home: React.FC = () => {
         <CartButton onClick={toggleCartDrawer} />
         {isCartOpen && <CartDrawer onClose={toggleCartDrawer} />}
       </div>
+      <Footer />
     </CartProvider>
+    
   );
+  
 };
 
 export default Home;

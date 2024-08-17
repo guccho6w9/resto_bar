@@ -1,6 +1,11 @@
 {
   "HAMBURGUESAS": [
     { 
+      "name": "Monster burguer", 
+      "price": 4999, 
+      "description": "Doble hamburguesa de 150g, doble queso, doble huevo, cebolla caramelizada, bacon, mayonesa, lechuga, tomate"
+    },
+    { 
       "name": "Hamburguesa común", 
       "price": 2999, 
       "description": "Hamburguesa de 150g, queso, huevo, mayonesa, lechuga, tomate"
